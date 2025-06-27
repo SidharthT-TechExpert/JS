@@ -5,6 +5,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+
+
 </head>
 
 <body>
@@ -12,12 +14,21 @@
                 <li>Item 1</li>
                 <li>Item 2</li>
         </ul>
+        <button ondragend="clicked()" onclick="clicked()">Click me</button>
+
 </body>
 <script>
-         document.getElementById("list").addEventListener('click',(event)=>{
-             if(event.target.tagName === "LI"){
-                console.log("Clicked: ",event.target.textContent);
-             }
-         })
+        function clicked() {
+                document.querySelector("body > button").innerHTML = 'In Pregress'
+                document.querySelector("#list > li:nth-child(1)").innerHTML = 'Lerning Started...!'
+                document.querySelector("#list > li:nth-child(1)").style.color = 'red'
+        }
+
+        document.getElementById("list").addEventListener('click', (event) => {
+                if (event.target.tagName === "LI") {
+                        console.log("Clicked: ", event.target.textContent);
+                }
+        })
 </script>
+
 </html>
