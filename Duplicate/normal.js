@@ -15,4 +15,4 @@ function duplicate() {
   return duplicat;
 }
 
-console.log(duplicate());
+console.log(duplicate().length);
