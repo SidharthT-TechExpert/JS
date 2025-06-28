@@ -1,6 +1,5 @@
 let ar = [1, 2, 3, 11, 21, 33, 35, 42, 43, 53, 55];
-let prime = [];
-
+let prime = []
 isPrime = (num) => {
   if (num < 2) return false;
   if (num == 2) return true;
@@ -12,7 +11,9 @@ isPrime = (num) => {
   return true;
 };
 
-// let prime = ar.filter(isPrime)
-for (let i = 0, k; i < ar.length; i++) isPrime(ar[i]) ? prime.push(ar[i]) : k++;
+// ar = ar.filter(isPrime)
 
-console.log(prime);
+for (let i = 0; i < ar.length; i++)
+  isPrime(ar[i]) ? null : ar.splice(i--,1)
+  
+console.log(ar);
