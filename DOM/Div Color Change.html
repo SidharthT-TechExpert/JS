@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style>
+                body {
+                        margin: 0;
+                        height: 100vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                }
+
+                #box {
+                        width: 200px;
+                        height: 200px;
+                        background-color: rgb(0, 68, 255);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                }
+
+                button {
+                        background-color: rgba(255, 34, 0, 0.737);
+                       border-radius: 20%  ;
+                       border: 5px solid gold;
+                }
+        </style>
+</head>
+
+<body>
+        <div id="box">
+                <button id="change">Red</button>
+        </div>
+        <script>
+                document.getElementById('change').addEventListener('click', () => {
+                        let box = document.getElementById('box');
+                        let btn = document.querySelector('#box > button');
+
+                        let colorBtn = getComputedStyle(btn).backgroundColor;
+                        let colorBox = getComputedStyle(box).backgroundColor;
+
+                        btn.textContent = btn.textContent === 'Red' ? "Green" : "Red";
+
+                        document.body.style.backgroundColor = colorBox;
+                        box.style.backgroundColor = colorBtn;
+                        btn.style.backgroundColor = colorBox;
+                });
+
+        </script>
+
+</body>
+
+</html>
